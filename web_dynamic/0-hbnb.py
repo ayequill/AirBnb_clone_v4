@@ -11,7 +11,6 @@ from uuid import uuid4
 app = Flask(__name__)
 # app.jinja_env.trim_blocks = True
 # app.jinja_env.lstrip_blocks = True
-app.template_folder = '.'
 
 
 @app.teardown_appcontext
