@@ -11,10 +11,14 @@ $(document).ready(() => {
             $('.amenities_filter').text(filter);
         });
         $.ajax({
-            url: "http://0.0.0.0:5000/api/v1/status/",
+            url: "http://0.0.0.0:5001/api/v1/status/",
             type: "GET",
             success: (res) => {
-                console.log(res)
+                if (res.status === 'OK') {
+                    $('#api_status').addClass('available')
+                } else {
+                    $('#api_status').removeClass('available')
+                }
             }
         })
     }
